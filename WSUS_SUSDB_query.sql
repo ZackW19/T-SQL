@@ -1,3 +1,6 @@
+-- ***********************************************************************
+-- pull data from Windows Server Update Services SUSDB database
+-- ***********************************************************************
 USE SUSDB
 SELECT C.FullDomainName AS Fqdn,C.LastSyncTime, C.LastSyncResult, C.LastReportedStatusTime ,TG.Name AS [GroupName], VU.KnowledgebaseArticle AS KB, VU.SecurityBulletin, VU.DefaultTitle, VU.InstallationImpact, VU.PublicationState, VU.MsrcSeverity, VU.ArrivalDate AS [Imported_Arrival_Date], VU.CreationDate, VU.IsDeclined, VU.IsWsusInfrastructureUpdate, U.IsPublic, VUA.Action, VUA.AdministratorName, VUA.CreationDate AS [DeploymentTime],
        'State' = CASE 
